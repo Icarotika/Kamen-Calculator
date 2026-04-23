@@ -176,7 +176,6 @@ while(True):
         print("Se x = 1; y = ", funcaoafim2)
         time.sleep(1)
 
-    print(f"DEBUG: '{interesse}'")
 
     # ACABOU SAPORRA
 
