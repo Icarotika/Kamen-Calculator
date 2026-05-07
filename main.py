@@ -1,3 +1,4 @@
+
 import time
 
 
@@ -33,20 +34,25 @@ while(True):
 
         print("\nAgora, vamos aprender bhaskara!")
         print("Defina os números A, B e C da função:\033[35m ax² + bx + c = 0 \033[0m")
-        a = int(input("Defina o algoritmo \033[33mA: \033[0m"))
-        b = int(input("Defina o algoritmo \033[33mB: \033[0m"))
-        c = int(input("Defina o algoritmo \033[33mC: \033[0m"))
+        a = float(input("Defina o algoritmo \033[33mA: \033[0m"))
+        b = float(input("Defina o algoritmo \033[33mB: \033[0m"))
+        c = float(input("Defina o algoritmo \033[33mC: \033[0m"))
         time.sleep(1)
         d = ( b ** 2) - (4 * a * c)
-        print("\nPrimeiro definimos o DELTA, que, utilizando os valores dados, será: \nDelta =", d)
-        time.sleep(2)
-        print("\nAgora, faremos o calculo pela formula de Bhaskara")
-        time.sleep(2)
 
-        x1bhaskara = (-b + d ** 0.5) / (2 * a)
-        x2bhaskara = (-b - d ** 0.5) / (2 * a)
+        if d < 0:
+            time.sleep(2)
+            print("\nO Delta deu Negativo, logo, essa conta não possui resultados")
+        else:
+            print("\nPrimeiro definimos o DELTA, que, utilizando os valores dados, será: \nDelta =", d)
+            time.sleep(2)
+            print("\nAgora, faremos o calculo pela formula de Bhaskara")
+            time.sleep(2)
 
-        print("os resultados são: \nx1 = ", x1bhaskara, "\nx2 = ", x2bhaskara)
+            x1bhaskara = ( (- b) + (d ** 0.5)) / (2 * a)
+            x2bhaskara = ( (- b) - (d ** 0.5)) / (2 * a)
+
+            print("os resultados são: \nx1 = ", x1bhaskara, "\nx2 = ", x2bhaskara)
 
 
 
@@ -66,7 +72,7 @@ while(True):
             time.sleep(1)
             a = int(input("Defina o algoritmo \033[33mA: \033[0m"))
             b = int(input("Defina o algoritmo \033[33mB: \033[0m"))
-            c = (a ** 2) - (b ** 2)
+            c = ((a ** 2) - (b ** 2)) ** 0.5
             time.sleep(1)
             print("\nO Valor do Cateto Desconhecido dessa função é \n c = ", c)
         elif interessepitagoras == "hipotenusa":
@@ -138,13 +144,13 @@ while(True):
 
         # CIRCULO
         elif interessearea == "Circulo":
-            print("\nA área de um Circulo é dada pela fórmula:\033[35m π . r²")
+            print("\nA área de um Circulo é dada pela fórmula:\033[35m π . r² \033[0mÁ")
             time.sleep(1)
             print("Sendo que π = pi, ou seja, arredondamos pra 3,14")
             time.sleep(0.5)
             print("e r = raio do circulo")
             time.sleep(1)
-            raiocirculo = int(input("\nDefina o valor de \033[33mr: \033[0m"))
+            raiocirculo = float(input("\nDefina o valor de \033[33mr: \033[0m"))
             areacirculo = pi * ( raiocirculo ** 2)
             time.sleep(1)
             print("\nA área deste circulo é de: ", areacirculo)
